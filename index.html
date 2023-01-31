@@ -3,29 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MPG Calculator</title>
+    <title>ATM Machine</title>
   </head>
   <body>
-    <h1>MPG Calculator</h1>
+    <h1>ATM</h1>
+    <button onClick="window.location.reload();">Reset</button>
+    <button onclick="custom()">Custom bills</button>
     <script>
-      let miles = parseFloat(window.prompt("How many miles did you drive?"));
-      let gallons = parseFloat(
-        prompt("How many gallons were used on your trip?")
-      );
+      var money = parseInt(window.prompt("How many money would u desire?"));
 
-      //console.log("User entered: ", miles);
-      console.log(
-        "User entered:" + miles + " miles, and " + gallons + " gallons."
-      );
+      console.log("the user would like " + money + " dollars.");
 
-      let mpg = miles / gallons;
+      a = money % 100;
+      b = money - a;
+      hundreds = b / 100;
+      money = money % 100;
+      a = money % 50;
+      b = money - a;
+      fifties = b / 50;
+      money = money % 50;
+      a = money % 20;
+      b = money - a;
+      twenties = b / 20;
+      money = money % 20;
+      a = money % 10;
+      b = money - a;
+      tens = b / 10;
+      money = money % 10;
+      a = money % 5;
+      b = money - a;
+      fives = b / 5;
+      money = money % 5;
+      a = money % 2;
+      b = money - a;
+      toonies = b / 2;
+      money = money % 2;
+      loonies = money;
 
-      console.log("MPG for this trip was ", mpg);
-
-      const html = `<p><label>Miles:&nbsp;</label>${miles}</p>
-      <p><label>Gallons:&nbsp;</label>${gallons}</p>
-      <p><label>MPG:&nbsp;</label>${mpg.toFixed(2)}</p>`;
-
+      function custom() {
+        var bill100 = parseInt(window.prompt("How many money 100s?"));
+      
+      }
+      const html = `<p><label>hundreds:&nbsp;</label>${hundreds}</p>
+      <p><label>fifties:&nbsp;</label>${fifties}</p>
+      <p><label>twenties:&nbsp;</label>${twenties}</p>
+      <p><label>tens:&nbsp;</label>${tens}</p>
+      <p><label>fives:&nbsp;</label>${fives}</p>
+      <p><label>toonies:&nbsp;</label>${toonies}</p>
+      <p><label>loonies:&nbsp;</label>${loonies}</p>`;
       document.write(html);
     </script>
   </body>
